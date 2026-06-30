@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monocle Network</title>
+
+<style>
+:root{
+  --bg:#070A0F;
+  --panel:#0E1420;
+  --text:#E8EEF6;
+  --muted:#9AA6B2;
+  --line:rgba(255,255,255,0.08);
+  --accent:#7AE7FF;
+  --accent2:#A78BFA;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+}
+
+body{
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(122,231,255,0.08), transparent),
+    radial-gradient(800px 500px at 85% 20%, rgba(167,139,250,0.08), transparent),
+    var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* subtle grid */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  opacity:0.2;
+}
+
+header{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 24px;
+}
+
+.hero{
+  max-width:900px;
+}
+
+h1{
+  font-size:64px;
+  letter-spacing:-1px;
+  font-weight:700;
+}
+
+.subtitle{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.6;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:24px;
+  padding:6px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.scroll{
+  margin-top:40px;
+  font-size:12px;
+  color:var(--muted);
+  opacity:0.7;
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:80px 24px;
+}
+
+.section{
+  margin-bottom:90px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
+}
+
+.section.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h2{
+  font-size:22px;
+  margin-bottom:14px;
+  letter-spacing:-0.3px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+  max-width:750px;
+}
+
+.grid{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:14px;
+}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  transition:transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(122,231,255,0.25);
+}
+
+.card h3{
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:13px;
+}
+
+.divider{
+  height:1px;
+  background:var(--line);
+  margin:60px 0;
+}
+
+footer{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+a.button{
+  display:inline-block;
+  margin-top:28px;
+  padding:10px 16px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  text-decoration:none;
+  color:var(--text);
+  background:rgba(255,255,255,0.02);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+    <h1>Monocle</h1>
+    <div class="subtitle">
+      A decentralized exchange coordination network focused on transparency, predictable operations,
+      and sustainable funding for open-source infrastructure.
+    </div>
+    <div class="badge">early-stage test network</div>
+    <div class="scroll">scroll ↓</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>
+      Monocle is a non-custodial network layer designed to coordinate exchange infrastructure,
+      improve operational transparency, and route a portion of protocol revenue into public goods
+      such as development bounties and security research.
+    </p>
+
+    <a class="button" href="#infra">View infrastructure model</a>
+  </div>
+
+  <div class="section" id="infra">
+    <h2>Network components</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Seed layer</h3>
+        <p>Peer discovery and network bootstrap coordination across distributed nodes.</p>
+      </div>
+
+      <div class="card">
+        <h3>Arbitration layer</h3>
+        <p>Dispute resolution and multisig escrow participation for trade settlement.</p>
+      </div>
+
+      <div class="card">
+        <h3>Price feeds</h3>
+        <p>Market rate propagation for offer construction and trade pricing logic.</p>
+      </div>
+
+      <div class="card">
+        <h3>Trade layer</h3>
+        <p>User nodes executing peer-to-peer exchange flows over encrypted transport.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Design principles</h2>
+    <p>
+      The system prioritizes verifiability of flows, minimal trust assumptions, and clear separation
+      of roles. Fee allocation is structured to fund protocol maintenance, security review, and ecosystem tooling.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>Test network state</h2>
+    <p>
+      Initial deployments are designed for stagenet simulation with reproducible environments,
+      deterministic node configuration, and controlled failure testing.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  Monocle Network — experimental infrastructure layer
+</footer>
+
+<script>
+// scroll reveal
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
