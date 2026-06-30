@@ -217,19 +217,27 @@ header{
 
 /* ---------- CARD ---------- */
 
-.content-container > *{
-
-    background:rgba(24,28,36,.75);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
+.content-container{
+    max-width:900px;
+    margin:60px auto;
     padding:36px;
 
-    margin-bottom:30px;
-
+    background:rgba(24,28,36,.75);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
     box-shadow:var(--shadow);
+
+    backdrop-filter: blur(12px);
+}
+
+/* remove per-element cards */
+.content-container > *{
+    background:none;
+    border:none;
+    padding:0;
+    margin:0 0 1.2rem 0;
+    box-shadow:none;
+}
 
 }
 
