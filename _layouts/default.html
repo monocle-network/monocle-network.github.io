@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>{{ page.title }} | {{ site.title }}</title>
+
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
+
 <body>
 
-  <header>
-    <div class="header-container">
-      <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
-      {% include nav.html %}
-    </div>
-  </header>
+<div class="background-glow"></div>
 
-  <main class="content-container">
-    {{ content }}
-  </main>
+<header>
+  <div class="header-container">
+
+    <a class="logo" href="{{ '/' | relative_url }}">
+      {{ site.title }}
+    </a>
+
+    {% include nav.html %}
+
+  </div>
+</header>
+
+<main class="content-container">
+  {{ content }}
+</main>
 
 </body>
 </html>
