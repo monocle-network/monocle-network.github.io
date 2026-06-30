@@ -1,0 +1,49 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+.header-container, .content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 1px solid #eee;
+  background: #fcfcfc;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #111;
+  font-size: 1.2rem;
+}
+
+/* Flat Horizontal Navbar */
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #666;
+}
+
+.site-nav a:hover, .site-nav .active a {
+  color: #0076ff;
+  font-weight: 500;
+}

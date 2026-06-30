@@ -1,0 +1,25 @@
+title: Monocle Network
+description: Haveno based P2P noKYC decentralized exchange
+url: "" # Leave empty for GitHub Pages project sites or set to your domain
+
+# Global front-matter defaults based on folder paths
+defaults:
+  - scope:
+      path: "" # Applies to files in the root
+    values:
+      layout: "default"
+  - scope:
+      path: "articles" # Automatically configures files inside a 'posts' folder
+    values:
+      layout: "default"
+  - scope:
+      path: "funds" # Automatically configures files inside a 'contests' folder
+    values:
+      layout: "default"
+
+# Exclude system development files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
